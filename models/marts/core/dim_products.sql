@@ -12,7 +12,11 @@ with
         from {{ ref("stg_products") }}
     ),
     stg_order_items as (
-        select product_id, sale_price, ordered_at from {{ ref("stg_order_items") }}
+        select 
+            product_id, 
+            sale_price, 
+            ordered_at 
+        from {{ ref("stg_order_items") }}
     ),
     orders_agg as (
         select

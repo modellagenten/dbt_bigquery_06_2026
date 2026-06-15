@@ -22,9 +22,7 @@ models:
         data_tests:
           - not_null
 
-
     tests:
       - dbt_utils.expression_is_true:
           arguments:
             expression: "cost > 0"
-

@@ -13,7 +13,7 @@ renamed as (
         category,
         department,
         sku,
-        retail_price,
+        round(retail_price, 2) as RETAIL_PRICE,
         cost,
         retail_price - cost as margin
 

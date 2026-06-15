@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: fct_order
+  - name: fct_orders
     description: "Facts Orders"
     columns:
       - name: order_id
@@ -14,6 +14,6 @@ models:
       - name: status
         data_tests:
           - accepted_values:
-              arguments: # available in v1.10.5 and higher. Older versions can set the <argument_name> as the top-level property.
+              arguments:
                 values:
                   ["Complete", "Processing", "Shipped", "Cancelled", "Returned"]

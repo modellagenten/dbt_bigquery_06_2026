@@ -1,6 +1,22 @@
 version: 2
 
 models:
+  - name: fct_orders
+    description: "Facts Orders"
+    columns:
+      - name: order_id
+        data_tests:
+          - unique
+          - not_null
+      - name: user_id
+        data_tests:
+          - not_null
+      - name: status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values:
+                  ["Complete", "Processing", "Shipped", "Cancelled", "Returned"]
   - name: dim_users
     description: "Users."
     columns:

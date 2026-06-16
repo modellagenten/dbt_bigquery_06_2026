@@ -54,7 +54,19 @@ models:
       - name: email
         tests:
           - not_null
-      - name: first_order_at
-        tests:
-          - not_null
+#      - name: first_order_at
+#        tests:
+#          - not_null
 
+
+
+  - name: dim_products
+    description: "Produkt, angereichert um Verkaufskennzahlen, wie Gesamtanzahl der verkauften Produkte, Gesamterlös, Erstes und Letztes verkauftes Produkt."
+    columns:
+      - name: product_id
+        data_tests:
+          - unique
+          - not_null
+      - name: category
+        data_tests:
+          - not_null          

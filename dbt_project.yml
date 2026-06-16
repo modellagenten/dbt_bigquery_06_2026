@@ -30,3 +30,4 @@ models:
 vars:
   thelook_project: 'bigquery-public-data'
   thelook_dataset: 'thelook_ecommerce'
+  snapshot_schema: 'dbt_t14_dev_snapshots'

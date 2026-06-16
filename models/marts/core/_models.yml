@@ -17,3 +17,20 @@ models:
               arguments:
                 values:
                   ["Complete", "Processing", "Shipped", "Cancelled", "Returned"]
+  - name: dim_users
+    description: "Users."
+    columns:
+      - name: user_id
+        description: "User Id."
+        tests:
+          - unique
+          - not_null  
+      - name: email
+        tests:
+          - not_null
+      - name: first_order_at
+        tests:
+          - not_null
+
+
+

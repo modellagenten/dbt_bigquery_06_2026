@@ -1,7 +1,6 @@
 {% snapshot products_snapshot %}
 {{
  config(
- target_schema=var('snapshot_schema'),
  unique_key='id',
  strategy='check',
  check_cols=['name', 'brand', 'category', 'retail_price']
@@ -19,3 +18,4 @@ from {{ source('thelook_ecommerce', 'products') }}
 {% endsnapshot %}
 
 
+--  target_schema=var('snapshot_schema'),

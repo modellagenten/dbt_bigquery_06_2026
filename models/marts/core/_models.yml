@@ -69,4 +69,16 @@ models:
           - not_null
       - name: category
         data_tests:
-          - not_null          
+          - not_null     
+
+  - name: fct_daily_orders 
+    description: "Bestellungen aggregiert auf Tagesebene (Incremental)." 
+    columns: 
+      - name: order_day 
+        description: "Bestelldatum (Tag)." 
+        tests: 
+          - unique 
+          - not_null 
+      - name: n_orders 
+        tests: 
+          - not_null

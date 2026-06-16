@@ -50,15 +50,13 @@ models:
         description: "User Id."
         tests:
           - unique
-          - not_null  
+          - not_null
       - name: email
         tests:
           - not_null
-#      - name: first_order_at
-#        tests:
-#          - not_null
-
-
+  #      - name: first_order_at
+  #        tests:
+  #          - not_null
 
   - name: dim_products
     description: "Produkt, angereichert um Verkaufskennzahlen, wie Gesamtanzahl der verkauften Produkte, Gesamterlös, Erstes und Letztes verkauftes Produkt."
@@ -69,16 +67,16 @@ models:
           - not_null
       - name: category
         data_tests:
-          - not_null     
+          - not_null
 
-  - name: fct_daily_orders 
-    description: "Bestellungen aggregiert auf Tagesebene (Incremental)." 
-    columns: 
-      - name: order_day 
-        description: "Bestelldatum (Tag)." 
-        tests: 
-          - unique 
-          - not_null 
-      - name: n_orders 
-        tests: 
+  - name: fct_daily_orders
+    description: "Bestellungen aggregiert auf Tagesebene (Incremental)."
+    columns:
+      - name: order_day
+        description: "Bestelldatum (Tag)."
+        tests:
+          - unique
+          - not_null
+      - name: n_orders
+        tests:
           - not_null

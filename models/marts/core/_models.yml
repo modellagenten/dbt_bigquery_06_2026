@@ -26,3 +26,35 @@ models:
       - dbt_utils.expression_is_true:
           arguments:
             expression: "cost > 0"
+
+  - name: fct_orders
+    description: "Facts Orders"
+    columns:
+      - name: order_id
+        data_tests:
+          - unique
+          - not_null
+      - name: user_id
+        data_tests:
+          - not_null
+      - name: status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values:
+                  ["Complete", "Processing", "Shipped", "Cancelled", "Returned"]
+  - name: dim_users
+    description: "Users."
+    columns:
+      - name: user_id
+        description: "User Id."
+        tests:
+          - unique
+          - not_null  
+      - name: email
+        tests:
+          - not_null
+      - name: first_order_at
+        tests:
+          - not_null
+
